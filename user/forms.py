@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from django.contrib.auth import authenticate
 
-from activity.tasks import send_verification_code, send_verification_email
+from user.tasks import send_verification_code, send_verification_email, send_sms_api_kavenegar
 
 User = get_user_model()
 
@@ -24,8 +24,7 @@ class RegistrationForm(forms.Form):
 
     def save(self):
         user = User.objects.create_user(**self.cleaned_data)
-        send_verification_code.delay(user.username)
-        send_verification_email.delay(user.email)
+        send_sms_api_kavenegar.delay()
         return user
 
 

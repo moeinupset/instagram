@@ -12,8 +12,8 @@ ALLOWED_HOSTS = ['*']
 
 DB = {
     'NAME': 'instagram',
-    'USER': 'moein',
-    'PASS': 'm09332823692',
+    'USER': 'test',
+    'PASSWORD': 'test',
     'HOST': 'localhost',
     'PORT': '5432'
 }

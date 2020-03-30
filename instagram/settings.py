@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     'content.apps.ContentConfig',
     'location.apps.LocationConfig',
     'relation.apps.RelationConfig',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -70,7 +71,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': DB['NAME'],
         'USER': DB['USER'],
-        'PASS': DB['PASS'],
+        'PASSWORD': DB['PASSWORD'],
         'HOST': DB['HOST'],
         'PORT': DB['PORT']
     }
@@ -127,4 +128,4 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'ASIA/Tehran'
-CELERY_ENABLE_TIMEZONE = True
+CELERY_ENABLE_TIMEZONE = False
